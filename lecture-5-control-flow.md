@@ -60,18 +60,27 @@ Turn the following sentences into valid JavaScript `if` statements. _Use console
 ```js
 // 1. If it rains, I stay home.
 let currentWeather = 'rainy';
+if (currentWeather === 'rainy') {
+    console.log('Staying home');
+}
 
 // 2. If I am hungry, I eat.
 let hunger = true;
+if (hunger) {
+    console.log('FOOOD');
+}
 
 // 3. If it's 10pm, I go to bed. If not, I write code.
 let currentHour = 22;
+if (currentHour >= 22 || currentHour < 6) {
+    console.log("Sleepy time");
+}
+else {
+    console.log('Send help');
+}
 
 ```
 
-## Loops
-
----
 
 Here is a program that outputs all even numbers between 0 and 12.
 
@@ -125,7 +134,13 @@ Let's write a function that outputs 2^10 (two to the power of ten).
 
 ```js
 // Example
-
+let number = 2;
+let increment = 0;
+while (increment <= 10) {
+    console.log (`2^ ${increment} = ${number}`);
+    ++increment;
+    number = number * 2
+}
 
 ```
 
@@ -179,7 +194,9 @@ for (let number = 0; number <=12; number = number + 1) {
 Write a program that output all of the numbers from 0 to 25
 
 ```js
-// code here
+for (let number = 0; number <= 25; ++number) {
+    console.log(number);
+}
 
 ```
 
@@ -191,6 +208,11 @@ Write a program that output all of ODD the numbers from 0 to 25
 
 ```js
 // code here
+for (let number = 0; number <= 25; ++number) {
+    if (number % 2 === 1) {
+        console.log(number);
+    }
+}
 
 ```
 
@@ -202,7 +224,14 @@ Write a program that output all of the numbers from 0 to 25, but replaces all mu
 
 ```js
 // code here
-
+for (let number = 0; number <= 25; ++number) {
+    if (number % 5 === 0 && number !== 0) {
+        console.log('five alive!');
+    }
+    else {
+        console.log(number);
+    }
+}
 ```
 
 ---

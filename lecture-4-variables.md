@@ -43,11 +43,11 @@ For clarity, we often want to name variables with multi-word expressions.
 There are many ways to do this.
 
 - Camel Case
-    - ``
+    - `myName` (capital within the string)
 - Dashes
-    - ``
+    - `my-name` 
 - Underscores
-    - ``
+    - `my_name` 
 
 ---
 

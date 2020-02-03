@@ -12,7 +12,12 @@ There are 6 basic types in JavaScript.
 - Objects
 
 ```js
-// Examples
+String : "hello";
+Boolean : true/false;
+Empty values : null/undefined;
+Number : 1342;
+Arrays : [1, 2, 3, 4];
+Objects : {name: 'Fred', age: 23};
 
 ```
 
@@ -48,7 +53,7 @@ let diameter = 14;
 let radius = diameter / 2;
 
 // declare a string
-let introduction = `The area of a circle is π^2.`
+let intro = 'The area of a circle is π^2.'
 
 // declare a string with interpolation
 let example = `So a ${diameter} pizza has an area of ${pi * radius * radius}.`
@@ -101,12 +106,14 @@ Numbers are exactly what you would expect them to be: numeric values.
 - Basic operators: +, -, *, /
 - Order of operations is applied... but when in doubt, add parentheses.
 - %: The remainder operator, often called "modulo". This operator returns the remainder of a division.
-- Comparison Operators
-- Logical operators
+- Comparison Operators: >, <
+- Logical operators: &&, ||
 
 
 ```js
 // Examples...
+10%2 = 0; (no leftover)
+11%2 = 1; (leftover)
 
 ```
 
@@ -159,14 +166,14 @@ Of course comparison operators and logical operators are usually combined in an 
 ```js
 // Look at these expressions below and determine whether they evaluate to true or false
 
-1. true || false
-2. false && false
-3. 1 < 2 && 2 > 1
-4. 31 < 13 || 1 < 2 && 3 > 1
-5. 400 <= 400 && 399 < 400 && (30 > 31 || 400 > 31)
-6. true && false && false || false && true
-7. true && false || true || false
-8. true && false && false || false && true ? true && false && false || false && true : 1 < 2 && 2 > 1
+1. true || false = true;
+2. false && false = false;
+3. 1 < 2 && 2 > 1 = true;
+4. 31 < 13 || 1 < 2 && 3 > 1 = true
+5. 400 <= 400 && 399 < 400 && (30 > 31 || 400 > 31) = true;
+6. true && false && false || false && true = false;
+7. true && false || true || false = true;
+8. true && false && false || false && true ? true && false && false || false && true : 1 < 2 && 2 > 1 = true; 
 ```
 
 ---
@@ -184,7 +191,9 @@ Of course comparison operators and logical operators are usually combined in an 
 
 ```js
 // Examples
-
+8 * null = 0;
+"5" - 1 = 4;
+"5" + 1 = 51;
 ```
 
 ---
@@ -255,8 +264,8 @@ let anArrayOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 // Example 2 - Given this array
 let anArrayOfNumbers = ['bacon', undefined, 900, true]
 
-1. How do we access the value 900?
-2. How do we access the value `true`?
+1. How do we access the value 900? anArrayOfNumbers[2];
+2. How do we access the value `true`? anArrayOfNumbers[3];
 
 ```
 
@@ -277,10 +286,10 @@ let table = [
   [31,32,33,34,35,36]
 ]
 
-1. table[0][0]
-2. table[5][5]
-3. table[2][3]
-4. How would we access the value 27?
+1. table[0][0] = 1;
+2. table[5][5] = 36;
+3. table[2][3] = 16;
+4. How would we access the value 27? table[4][2];
 ```
 
 ---
@@ -293,9 +302,9 @@ Given this data structure:
 let data = [0, [], [], [1,2,3, [4]]]
 ```
 
-1. How would you access the value `0`?
-2. How would you access the value `3`?
-3. How would you access the value `4`?
+1. How would you access the value `0`? data[0];
+2. How would you access the value `3`? data[3][2];
+3. How would you access the value `4`? data[3][3][0];
 
 ---
 
@@ -308,8 +317,9 @@ Very broadly, an object can be defined as an unordered collection of key/value p
 This object has 3 properties.
 
 ```js
-// Example
-"it has a property with name 'givenName' and value of 'Yoda' of type string"
+// Example: access yoda
+let person = {'givenName': 'Yoda', 'surname': undefined, 'age': 900};
+person.givenName;
 
 ```
 
@@ -323,7 +333,7 @@ Group the following items together according to their type:
 
 `'hello'`, `0`, `['mouse', 'cat', 'dog']`, `'cat'`, `false`,
 
-`null`, `7` `'42'`, `{product: 'cake', price: '50$'}`,
+`null`, `7`, `'42'`, `{product: 'cake', price: '50$'}`,
 
 `undefined`,` ['coconut', 24, 'banana']`, `-99`
 
@@ -360,7 +370,10 @@ Values in objects can be accessed with
 ```js
 // Example
 let person = {name: 'Bob', age: 23};
+Dot notation: person.name;
+
 const otherPerson = {name: 'Joe', age: 31, height: '170cm'};
+Bracket notation: otherPerson['name']; 
 
 ```
 
@@ -374,9 +387,9 @@ let person = {name: 'Bob', age: 23};
 let name = 'John';
 
 // What is the value of the following expressions?
-1. person.name
-2. person['name']
-3. person[name]
+1. person.name = 'BoB';
+2. person['name'] = 'Bob';
+3. person[name] = undefined;
 
 ```
 
@@ -391,9 +404,9 @@ let person = {name: 'bob', age: 23};
 let key = 'name';
 
 // What is the value of the following expressions:
-1. person.key
-2. person['key']
-3. person[key]
+1. person.key = undefined;
+2. person['key'] = undefined;
+3. person[key] = 'bob';
 
 ```
 
